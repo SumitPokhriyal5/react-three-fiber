@@ -15,10 +15,11 @@ const FirstProject = () => {
   return (
     <>
     <orbitControls args={[camera, gl.domElement]} />
+    <directionalLight position={ [ 1, 2, 3 ] } />
       <group ref={groupRef}>
         <mesh position-x={-2}>
           <sphereGeometry />
-          <meshBasicMaterial color="orange" />
+          <meshStandardMaterial color="orange" />
           {/* <OrbitControls /> */}
         </mesh>
 
@@ -29,13 +30,13 @@ const FirstProject = () => {
           scale={1.5}
         >
           <boxGeometry />
-          <meshBasicMaterial color="mediumpurple" />
+          <meshStandardMaterial color="mediumpurple" />
           {/* <OrbitControls /> */}
         </mesh>
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
-        <meshBasicMaterial color="greenyellow" />
+        <meshStandardMaterial color="greenyellow" />
       </mesh>
     </>
   );
