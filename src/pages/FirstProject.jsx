@@ -15,7 +15,8 @@ const FirstProject = () => {
   return (
     <>
     <orbitControls args={[camera, gl.domElement]} />
-    <directionalLight position={ [ 1, 2, 3 ] } />
+    <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
+    <ambientLight intensity={ 0.5 } />
       <group ref={groupRef}>
         <mesh position-x={-2}>
           <sphereGeometry />
