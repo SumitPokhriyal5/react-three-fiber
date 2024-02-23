@@ -1,13 +1,16 @@
 import { Canvas } from '@react-three/fiber';
 import FirstProject from './pages/FirstProject';
-import SoldierAnimation from './pages/SoldierAnimation';
 
 function App() {
+  const cameraSettings = {
+    fov: 45,
+    near: 0.1, 
+    far: 200, 
+    position: [3, 2, 6]
+  }
   return (
-    <Canvas>
-     {/* <SoldierAnimation /> */}
+    <Canvas camera={cameraSettings}>
       <FirstProject />
-
     </Canvas>
   );
 }
