@@ -1,8 +1,11 @@
 import * as THREE from 'three';
-import { useMemo } from 'react';
+import { useRef, useMemo } from 'react';
+import { useEffect } from 'react';
 
 
 const CustomObject = () => {
+  const geometryRef = useRef();
+
   const verticesCount = 10 * 3;
  
   const positions = useMemo(() => {
@@ -13,9 +16,13 @@ const CustomObject = () => {
     return positions
   }, [])
 
+  useEffect(() => {
+    geometryRef.current.computeVertexNormals();
+  },[])
+
   return (
     <mesh>
-      <bufferGeometry>
+      <bufferGeometry ref={ geometryRef }>
         <bufferAttribute
           attach="attributes-position"
           count={verticesCount}
@@ -23,7 +30,7 @@ const CustomObject = () => {
           array={positions}
         />
       </bufferGeometry>
-      <meshBasicMaterial color={"red"} side={ THREE.DoubleSide } />
+      <meshStandardMaterial color={"red"} side={ THREE.DoubleSide } />
     </mesh>
   );
 };
