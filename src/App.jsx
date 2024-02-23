@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import FirstProject from './pages/FirstProject';
+import * as THREE from 'three'
 
 function App() {
   const cameraSettings = {
@@ -9,7 +10,10 @@ function App() {
     position: [3, 2, 6]
   }
   return (
-    <Canvas camera={cameraSettings}>
+    <Canvas gl={ {
+      antialias: true,
+      toneMapping: THREE.ACESFilmicToneMapping
+    }} camera={cameraSettings}>
       <FirstProject />
     </Canvas>
   );
