@@ -1,7 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import CustomObject from "../components/CustomObject";
-import { OrbitControls, TransformControls } from "@react-three/drei";
+import { OrbitControls, PivotControls, TransformControls } from "@react-three/drei";
 
 const FirstProject = () => {
   const cubeRef = useRef();
@@ -20,12 +20,13 @@ const FirstProject = () => {
     <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
     <ambientLight intensity={ 0.5 } />
       <group ref={groupRef}>
+        <PivotControls anchor={ [0, 0, 0 ] } depthTest={false}>
         <mesh position-x={-2}>
           <sphereGeometry />
           <meshStandardMaterial color="orange" />
           {/* <OrbitControls /> */}
         </mesh>
-
+        </PivotControls>
         <mesh
           ref={cubeRef}
           position-x={2}
