@@ -1,11 +1,9 @@
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { useThree, extend, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import CustomObject from "../components/CustomObject";
+import { OrbitControls } from "@react-three/drei";
 
-extend({ OrbitControls });
 const FirstProject = () => {
-  const { camera, gl } = useThree()
   const cubeRef = useRef();
   const groupRef = useRef();
   useFrame((state, delta) => {
@@ -18,7 +16,7 @@ const FirstProject = () => {
   });
   return (
     <>
-    <orbitControls args={[camera, gl.domElement]} />
+    <OrbitControls />
     <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
     <ambientLight intensity={ 0.5 } />
       <group ref={groupRef}>
