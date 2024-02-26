@@ -1,7 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import CustomObject from "../components/CustomObject";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, TransformControls } from "@react-three/drei";
 
 const FirstProject = () => {
   const cubeRef = useRef();
@@ -36,6 +36,7 @@ const FirstProject = () => {
           <meshStandardMaterial color="mediumpurple" />
           {/* <OrbitControls /> */}
         </mesh>
+      <TransformControls object={ cubeRef } />
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
