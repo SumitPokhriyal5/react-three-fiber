@@ -1,1 +1,1 @@
-# This repo is for practicing react three fiber
+# This repository is for practicing react three fiber( learning from bruno simon )
