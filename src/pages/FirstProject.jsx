@@ -32,7 +32,13 @@ const FirstProject = () => {
             <sphereGeometry />
             <meshStandardMaterial color="orange" />
             {/* <OrbitControls /> */}
-            <Html position={[1, 1, 0]} wrapperClass="label" center distanceFactor={ 6 } occlude={[sphereRef, cubeRef]}>
+            <Html
+              position={[1, 1, 0]}
+              wrapperClass="label"
+              center
+              distanceFactor={6}
+              occlude={[sphereRef, cubeRef]}
+            >
               That is a Sphere 👍
             </Html>
           </mesh>
