@@ -64,7 +64,7 @@ const FirstProject = () => {
         <planeGeometry />
         <meshStandardMaterial color="greenyellow" />
       </mesh>
-      {/* <CustomObject /> */}
+      <CustomObject />
     </>
   );
 };
