@@ -6,7 +6,7 @@ const SoldierAnimation = () => {
   return (
     < >
       <Suspense fallback={null}>
-      <ambientLight />
+      {/* <ambientLight /> */}
         <pointLight position={[10, 10, 10]} />
         <Model />
         <OrbitControls />
